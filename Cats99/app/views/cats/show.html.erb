@@ -1,0 +1,10 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <% @cat.attributes.each do |col, value| %>
+    <tr>
+      <td><%= col %></td>
+      <td><%= value %></td>
+    </tr>
+  <% end %>
+</table>
