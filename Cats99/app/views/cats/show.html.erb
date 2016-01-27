@@ -8,3 +8,22 @@
     </tr>
   <% end %>
 </table>
+
+<br/>
+<h2>Upcoming Johbs</h2>
+<table>
+  <tr>
+    <td>Start Date</td>
+    <td>End Date</td>
+    <td>Approval</td>
+    <td>Pimp Approve?</td>
+  </tr>
+  <% @cat.cat_rental_requests.order(:start_date).each do |request| %>
+    <tr>
+      <td><%= request.start_date %></td>
+      <td><%= request.end_date %></td>
+      <td><%= request.status %></td>
+      <td><%= button_to "Approve", action: @cat.approve! %></td>
+    </tr>
+  <% end %>
+</table>
